@@ -6,13 +6,13 @@ const port = 3000
 
 app.use(cookieParser())
 
-app.get('/setcookie', (req, res) =>{
-    res.cookie("firstName", "Erik")
+app.get('/login', (req, res) =>{
+    res.cookie("loginName", "Erik")
     res.send("success")
 })
 
-app.get('/readcookie', (req, res) =>{
-    res.send(req.cookies.firstName)
+app.get('/hello', (req, res) =>{
+    res.send(`Welcome ${req.cookies.loginName}!`)
 })
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
